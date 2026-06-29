@@ -10,6 +10,10 @@ import ClienteForm from './pages/admin/clientes/ClienteForm'
 import ClienteLayout from './pages/cliente/ClienteLayout'
 import ClienteDashboard from './pages/cliente/ClienteDashboard'
 import ProtectedRoute from './components/shared/ProtectedRoute'
+import ContratosPage from './pages/admin/contratos/ContratosPage'
+import ContratoForm from './pages/admin/contratos/ContratoForm'
+import TareasPage from './pages/admin/tareas/TareasPage'
+import TareaForm from './pages/admin/tareas/TareaForm'
 
 export default function App() {
   return (
@@ -33,8 +37,12 @@ export default function App() {
           <Route path="clientes/nuevo" element={<ClienteForm />} />
           <Route path="clientes/:id" element={<ClienteDetalle />} />
           <Route path="clientes/:id/editar" element={<ClienteForm />} />
-          <Route path="contratos" element={<div className="text-sand-600">Módulo Contratos — próximamente</div>} />
-          <Route path="tareas" element={<div className="text-sand-600">Módulo Tareas — próximamente</div>} />
+          <Route path="contratos" element={<ContratosPage />} />
+          <Route path="contratos/nuevo" element={<ContratoForm />} />
+          <Route path="contratos/:id/editar" element={<ContratoForm />} />
+          <Route path="tareas" element={<TareasPage />} />
+          <Route path="tareas/nueva" element={<TareaForm />} />
+          <Route path="tareas/:id/editar" element={<TareaForm />} />
           <Route path="cobranza" element={<div className="text-sand-600">Módulo Cobranza — próximamente</div>} />
           <Route path="documentos" element={<div className="text-sand-600">Módulo Documentos — próximamente</div>} />
         </Route>
