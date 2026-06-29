@@ -7,13 +7,16 @@ import AdminDashboard from './pages/admin/AdminDashboard'
 import ClientesPage from './pages/admin/clientes/ClientesPage'
 import ClienteDetalle from './pages/admin/clientes/ClienteDetalle'
 import ClienteForm from './pages/admin/clientes/ClienteForm'
-import ClienteLayout from './pages/cliente/ClienteLayout'
-import ClienteDashboard from './pages/cliente/ClienteDashboard'
-import ProtectedRoute from './components/shared/ProtectedRoute'
 import ContratosPage from './pages/admin/contratos/ContratosPage'
 import ContratoForm from './pages/admin/contratos/ContratoForm'
 import TareasPage from './pages/admin/tareas/TareasPage'
 import TareaForm from './pages/admin/tareas/TareaForm'
+import ClienteLayout from './pages/cliente/ClienteLayout'
+import ClienteDashboard from './pages/cliente/ClienteDashboard'
+import ClienteContratos from './pages/cliente/ClienteContratos'
+import ClienteCobranza from './pages/cliente/ClienteCobranza'
+import ClienteDocumentos from './pages/cliente/ClienteDocumentos'
+import ProtectedRoute from './components/shared/ProtectedRoute'
 
 export default function App() {
   return (
@@ -43,8 +46,8 @@ export default function App() {
           <Route path="tareas" element={<TareasPage />} />
           <Route path="tareas/nueva" element={<TareaForm />} />
           <Route path="tareas/:id/editar" element={<TareaForm />} />
-          <Route path="cobranza" element={<div className="text-sand-600">Módulo Cobranza — próximamente</div>} />
-          <Route path="documentos" element={<div className="text-sand-600">Módulo Documentos — próximamente</div>} />
+          <Route path="cobranza" element={<div style={{ color: '#8C8880' }}>Módulo Cobranza — próximamente</div>} />
+          <Route path="documentos" element={<div style={{ color: '#8C8880' }}>Módulo Documentos — próximamente</div>} />
         </Route>
 
         <Route
@@ -56,9 +59,9 @@ export default function App() {
           }
         >
           <Route index element={<ClienteDashboard />} />
-          <Route path="informes" element={<div className="text-sand-600">Informes — próximamente</div>} />
-          <Route path="estado-cuenta" element={<div className="text-sand-600">Estado de cuenta — próximamente</div>} />
-          <Route path="documentos" element={<div className="text-sand-600">Documentos — próximamente</div>} />
+          <Route path="contratos" element={<ClienteContratos />} />
+          <Route path="cobranza" element={<ClienteCobranza />} />
+          <Route path="documentos" element={<ClienteDocumentos />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
