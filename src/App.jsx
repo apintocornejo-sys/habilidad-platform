@@ -17,6 +17,9 @@ import ClienteContratos from './pages/cliente/ClienteContratos'
 import ClienteCobranza from './pages/cliente/ClienteCobranza'
 import ClienteDocumentos from './pages/cliente/ClienteDocumentos'
 import ProtectedRoute from './components/shared/ProtectedRoute'
+import UsuariosPage from './pages/admin/usuarios/UsuariosPage'
+import UsuarioForm from './pages/admin/usuarios/UsuarioForm'
+import UsuarioDetalle from './pages/admin/usuarios/UsuarioDetalle'
 
 export default function App() {
   return (
@@ -36,6 +39,10 @@ export default function App() {
           }
         >
           <Route index element={<AdminDashboard />} />
+          <Route path="usuarios" element={<UsuariosPage />} />
+          <Route path="usuarios/nuevo" element={<UsuarioForm />} />
+          <Route path="usuarios/:id" element={<UsuarioDetalle />} />
+          <Route path="usuarios/:id/editar" element={<UsuarioForm />} />
           <Route path="clientes" element={<ClientesPage />} />
           <Route path="clientes/nuevo" element={<ClienteForm />} />
           <Route path="clientes/:id" element={<ClienteDetalle />} />
