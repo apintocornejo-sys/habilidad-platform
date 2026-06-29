@@ -4,6 +4,9 @@ import HomePage from './pages/public/HomePage'
 import LoginPage from './pages/public/LoginPage'
 import AdminLayout from './pages/admin/AdminLayout'
 import AdminDashboard from './pages/admin/AdminDashboard'
+import ClientesPage from './pages/admin/clientes/ClientesPage'
+import ClienteDetalle from './pages/admin/clientes/ClienteDetalle'
+import ClienteForm from './pages/admin/clientes/ClienteForm'
 import ClienteLayout from './pages/cliente/ClienteLayout'
 import ClienteDashboard from './pages/cliente/ClienteDashboard'
 import ProtectedRoute from './components/shared/ProtectedRoute'
@@ -26,7 +29,10 @@ export default function App() {
           }
         >
           <Route index element={<AdminDashboard />} />
-          <Route path="clientes" element={<div className="text-sand-600">Módulo Clientes — próximamente</div>} />
+          <Route path="clientes" element={<ClientesPage />} />
+          <Route path="clientes/nuevo" element={<ClienteForm />} />
+          <Route path="clientes/:id" element={<ClienteDetalle />} />
+          <Route path="clientes/:id/editar" element={<ClienteForm />} />
           <Route path="contratos" element={<div className="text-sand-600">Módulo Contratos — próximamente</div>} />
           <Route path="tareas" element={<div className="text-sand-600">Módulo Tareas — próximamente</div>} />
           <Route path="cobranza" element={<div className="text-sand-600">Módulo Cobranza — próximamente</div>} />
