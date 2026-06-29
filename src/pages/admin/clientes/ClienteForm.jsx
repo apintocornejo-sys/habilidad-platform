@@ -14,18 +14,14 @@ const COLORS = {
   alertLight: '#FBF0E8',
 }
 
-const COMUNAS_SANTIAGO = [
-  'Cerrillos','Cerro Navia','Conchalí','El Bosque','Estación Central',
-  'Huechuraba','Independencia','La Cisterna','La Florida','La Granja',
-  'La Pintana','La Reina','Las Condes','Lo Barnechea','Lo Espejo',
-  'Lo Prado','Macul','Maipú','Ñuñoa','Pedro Aguirre Cerda',
-  'Peñalolén','Providencia','Pudahuel','Quilicura','Quinta Normal',
-  'Recoleta','Renca','San Joaquín','San Miguel','San Ramón','Santiago',
-  'Vitacura',
-]
+const COMUNAS_COQUIMBO = {
+  'Provincia de Elqui':  ['La Serena', 'Coquimbo', 'Andacollo', 'La Higuera', 'Paihuano', 'Vicuña'],
+  'Provincia de Limarí': ['Combarbalá', 'Monte Patria', 'Ovalle', 'Punitaqui', 'Río Hurtado'],
+  'Provincia de Choapa': ['Canela', 'Illapel', 'Los Vilos', 'Salamanca'],
+}
 
 const initialForm = {
-  nombre: '', direccion: '', comuna: '', ciudad: 'Santiago', unidades: '', activo: true,
+  nombre: '', direccion: '', comuna: '', ciudad: 'La Serena', unidades: '', activo: true,
 }
 
 function Field({ label, required, error, children }) {
@@ -67,7 +63,7 @@ export default function ClienteForm() {
           nombre:    data.nombre    ?? '',
           direccion: data.direccion ?? '',
           comuna:    data.comuna    ?? '',
-          ciudad:    data.ciudad    ?? 'Santiago',
+          ciudad:    data.ciudad    ?? 'La Serena',
           unidades:  data.unidades  ?? '',
           activo:    data.activo    ?? true,
         })
@@ -176,8 +172,10 @@ export default function ClienteForm() {
                 <select name="comuna" value={form.comuna} onChange={handleChange}
                   className={inputClass} style={inputStyle(false)}>
                   <option value="">Selecciona una comuna</option>
-                  {COMUNAS_SANTIAGO.map((c) => (
-                    <option key={c} value={c}>{c}</option>
+                  {Object.entries(COMUNAS_COQUIMBO).map(([provincia, comunas]) => (
+                    <optgroup key={provincia} label={provincia}>
+                      {comunas.map(c => <option key={c} value={c}>{c}</option>)}
+                    </optgroup>
                   ))}
                 </select>
               </Field>
