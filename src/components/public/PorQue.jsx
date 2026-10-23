@@ -1,62 +1,88 @@
-const razones = [
-  { numero: '01', titulo: 'Transparencia total', desc: 'Acceso en línea a todos los movimientos financieros, contratos vigentes y actas de asamblea. Sin información oculta.' },
-  { numero: '02', titulo: 'Equipo dedicado', desc: 'Cada condominio tiene un administrador asignado con disponibilidad directa — no un call center genérico.' },
-  { numero: '03', titulo: 'Tecnología al servicio', desc: 'Portal digital propio para residentes y comité. Informes automáticos, alertas y documentos siempre disponibles.' },
-  { numero: '04', titulo: 'Cumplimiento legal garantizado', desc: 'Operamos conforme a la Ley de Copropiedad Inmobiliaria 21.442 y sus reglamentos. Tu condominio siempre al día.' },
+const N = '#0B1F3A'
+const G = '#00A676'
+
+const ciclo = [
+  { num: '01', titulo: 'Diagnóstico', desc: 'Levantamos brechas reales, no supuestos.' },
+  { num: '02', titulo: 'Diseño',      desc: 'Plan de acción medible y con dueños claros.' },
+  { num: '03', titulo: 'Implementación', desc: 'Ejecutamos junto a tu equipo, no en su reemplazo.' },
+  { num: '04', titulo: 'Control',     desc: 'Seguimiento continuo y ajuste sobre la marcha.' },
 ]
 
-const testimonios = [
-  { texto: 'Desde que llegó Habilidad, las asambleas son más ordenadas y los gastos comunes se pagan puntualmente. La diferencia es notable.', autor: 'Comité Condominio Las Palmas', ciudad: 'Las Condes, Santiago' },
-  { texto: 'El portal digital nos cambió la vida. Ahora puedo ver el estado de cuenta de mi departamento en cualquier momento.', autor: 'Residente Torre Norte', ciudad: 'Providencia, Santiago' },
+const stats = [
+  { value: '4',    label: 'Etapas de control por proyecto' },
+  { value: '100%', label: 'Planes a medida del sector' },
+  { value: '1',    label: 'Interlocutor directo, sin intermediarios' },
+  { value: '360°', label: 'Visión integral del proyecto' },
+]
+
+const checks = [
+  'Metodología adaptable, no genérica',
+  'Seguimiento activo, no solo informes',
+  'Un solo interlocutor durante todo el proyecto',
+  'Resultados medibles desde el primer hito',
 ]
 
 export default function PorQue() {
   return (
-    <section id="por-que" className="py-20 sm:py-28 bg-sand-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-          <div>
-            <span className="text-accent-600 text-sm font-semibold uppercase tracking-widest">Por qué nosotros</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-600 mt-2 mb-6">La diferencia está en los detalles</h2>
-            <p className="text-sand-600 leading-relaxed mb-10">
-              Administrar un condominio no es solo cobrar gastos comunes. Es resolver problemas antes de que ocurran, comunicarse con claridad y rendir cuentas sin que nadie tenga que pedir explicaciones.
-            </p>
-            <div className="flex flex-col gap-7">
-              {razones.map(({ numero, titulo, desc }) => (
-                <div key={numero} className="flex gap-5">
-                  <span className="text-2xl font-bold text-brand-200 leading-none mt-0.5 w-8 shrink-0">{numero}</span>
-                  <div>
-                    <h3 className="font-semibold text-brand-600 mb-1">{titulo}</h3>
-                    <p className="text-sand-600 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+    <>
+      {/* Ciclo de control */}
+      <section style={{ background: N, color: 'white', padding: '96px 0' }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ maxWidth: 640, marginBottom: 48 }}>
+            <p style={{ color: '#5FE3B4', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', fontSize: '.8rem' }}>Cómo trabajamos</p>
+            <h2 style={{ fontFamily: "'Montserrat',sans-serif", fontSize: 'clamp(1.6rem,2.6vw,2.2rem)', color: 'white', marginTop: 10, lineHeight: 1.2 }}>
+              El ciclo de control Habilidad
+            </h2>
+            <p style={{ color: '#C9D3E0', marginTop: 12 }}>Cuatro etapas que se repiten en cada proyecto, sin importar el sector.</p>
           </div>
-
-          <div className="flex flex-col gap-6">
-            <div className="bg-brand-600 rounded-2xl p-8 text-white">
-              <div className="grid grid-cols-2 gap-6">
-                {[{ v: '+120', l: 'Condominios' }, { v: '15+', l: 'Años de experiencia' }, { v: '4.9★', l: 'Valoración promedio' }, { v: '<4h', l: 'Tiempo de respuesta' }].map(({ v, l }) => (
-                  <div key={l} className="flex flex-col gap-1 border-l-2 border-accent-600 pl-4">
-                    <span className="text-2xl font-bold text-accent-400">{v}</span>
-                    <span className="text-brand-100 text-sm">{l}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {testimonios.map(({ texto, autor, ciudad }) => (
-              <div key={autor} className="bg-white border border-sand-200 rounded-2xl p-6">
-                <p className="text-sand-800 text-sm leading-relaxed mb-4 italic">"{texto}"</p>
-                <span className="text-brand-600 text-sm font-semibold block">{autor}</span>
-                <span className="text-sand-600 text-xs">{ciudad}</span>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0, position: 'relative' }} className="ciclo-row">
+            <div style={{ position: 'absolute', top: 29, left: '6%', right: '6%', height: 2, background: 'rgba(255,255,255,.18)' }} className="ciclo-line" />
+            {ciclo.map(({ num, titulo, desc }) => (
+              <div key={num} style={{ position: 'relative', zIndex: 1, padding: '0 16px' }}>
+                <div style={{ width: 58, height: 58, borderRadius: '50%', background: G, color: N, fontFamily: "'Montserrat',sans-serif", fontWeight: 800, fontSize: '1.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>{num}</div>
+                <h3 style={{ fontFamily: "'Montserrat',sans-serif", color: 'white', fontSize: '1.05rem', marginBottom: 8 }}>{titulo}</h3>
+                <p style={{ color: '#C9D3E0', fontSize: '.88rem', lineHeight: 1.6 }}>{desc}</p>
               </div>
             ))}
           </div>
-
         </div>
-      </div>
-    </section>
+        <style>{`
+          @media (max-width:880px) { .ciclo-row { grid-template-columns: 1fr 1fr !important; row-gap: 32px; } .ciclo-line { display: none; } }
+        `}</style>
+      </section>
+
+      {/* Nosotros */}
+      <section id="nosotros" style={{ padding: '88px 0', background: 'white' }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }} className="nosotros-grid">
+          <div>
+            <p style={{ color: G, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', fontSize: '.8rem' }}>Nosotros</p>
+            <h2 style={{ fontFamily: "'Montserrat',sans-serif", fontSize: 'clamp(1.6rem,2.6vw,2.2rem)', color: N, marginTop: 10, lineHeight: 1.2 }}>
+              Cercanía técnica, no burocracia
+            </h2>
+            <p style={{ marginTop: 14, color: '#4B5259', lineHeight: 1.6 }}>
+              Habilidad nace para llevar a organizaciones de cualquier tamaño y sector una consultoría rigurosa, sin la rigidez de las grandes firmas.
+            </p>
+            <ul style={{ listStyle: 'none', marginTop: 24 }}>
+              {checks.map((c) => (
+                <li key={c} style={{ display: 'flex', gap: 12, marginBottom: 14, fontWeight: 600, fontSize: '.96rem' }}>
+                  <span style={{ color: G, fontWeight: 800 }}>✓</span> {c}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ background: '#F5F7FA', borderRadius: 10, padding: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            {stats.map(({ value, label }) => (
+              <div key={label}>
+                <strong style={{ display: 'block', fontFamily: "'Montserrat',sans-serif", fontSize: '2rem', color: N }}>{value}</strong>
+                <span style={{ fontSize: '.82rem', color: '#4B5259' }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style>{`
+          @media (max-width:880px) { .nosotros-grid { grid-template-columns: 1fr !important; } }
+        `}</style>
+      </section>
+    </>
   )
 }

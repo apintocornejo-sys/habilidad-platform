@@ -1,59 +1,63 @@
+const G = '#00A676'
+const N = '#0B1F3A'
+
 const servicios = [
   {
-    titulo: 'Administración integral',
-    desc: 'Gestión completa del condominio: asambleas, comunicaciones, proveedores y cumplimiento legal conforme a la Ley 21.442.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>,
+    titulo: 'Consultoría Estratégica',
+    desc: 'Diagnóstico y hoja de ruta a la medida de tu organización.',
+    href: '#contacto',
+    icon: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 3v2M21 12h-2M12 21v-2M3 12h2"/></svg>,
   },
   {
-    titulo: 'Cobranza de gastos comunes',
-    desc: 'Emisión, seguimiento y cobranza de gastos comunes. Gestión de morosos con procesos claros y comunicación respetuosa.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+    titulo: 'Seguridad y Riesgos',
+    desc: 'Sistemas de prevención y cumplimiento normativo integral.',
+    href: '#contacto',
+    icon: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>,
   },
   {
-    titulo: 'Mantención y obras',
-    desc: 'Coordinación de mantenciones preventivas y correctivas. Supervisión de obras menores con presupuestos aprobados por el comité.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>,
+    titulo: 'Desarrollo Organizacional',
+    desc: 'Equipos, procesos y cultura orientados a resultados.',
+    href: '#contacto',
+    icon: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="6" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 8.5v4M12 12.5L6.8 16M12 12.5L17.2 16"/></svg>,
   },
   {
-    titulo: 'Gestión de contratos',
-    desc: 'Administración del ciclo completo de contratos con proveedores y prestadores de servicios: redacción, vigencia y renovación.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
-  },
-  {
-    titulo: 'Informes financieros',
-    desc: 'Reportes mensuales de ingresos, egresos y estado de fondos. Acceso digital en tiempo real para el comité y los residentes.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
-  },
-  {
-    titulo: 'Portal digital residentes',
-    desc: 'Cada condominio accede a su portal propio: informes, estado de cuenta, documentos y comunicados desde cualquier dispositivo.',
-    icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>,
+    titulo: 'Seguimiento de Proyectos',
+    desc: 'Trazabilidad de avances, hitos y responsables en tiempo real.',
+    href: '#contacto',
+    icon: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={G} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M7 14h4M7 17h7"/></svg>,
   },
 ]
 
 export default function Servicios() {
   return (
-    <section id="servicios" className="py-20 sm:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-14">
-          <span className="text-accent-600 text-sm font-semibold uppercase tracking-widest">Qué hacemos</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-600 mt-2 mb-4">Servicios de administración</h2>
-          <p className="text-sand-600 max-w-xl mx-auto text-base leading-relaxed">
-            Todo lo que tu condominio necesita, gestionado por profesionales con experiencia comprobada en Chile.
-          </p>
+    <section id="servicios" style={{ padding: '88px 0', background: 'white' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ maxWidth: 640, marginBottom: 48 }}>
+          <p style={{ color: G, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', fontSize: '.8rem' }}>Nuestros servicios</p>
+          <h2 style={{ fontFamily: "'Montserrat',sans-serif", fontSize: 'clamp(1.6rem,2.6vw,2.2rem)', color: N, marginTop: 10, lineHeight: 1.2 }}>
+            Un marco, adaptable a cualquier sector
+          </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicios.map(({ icon, titulo, desc }) => (
-            <div key={titulo} className="group border border-sand-200 rounded-2xl p-6 hover:border-brand-200 hover:shadow-sm transition-all duration-200 bg-sand-100 hover:bg-white">
-              <div className="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4 group-hover:bg-brand-600 group-hover:text-white transition-colors duration-200">
-                {icon}
-              </div>
-              <h3 className="font-semibold text-brand-600 text-base mb-2">{titulo}</h3>
-              <p className="text-sand-600 text-sm leading-relaxed">{desc}</p>
-            </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }} className="servicios-grid">
+          {servicios.map(({ icon, titulo, desc, href }) => (
+            <a key={titulo} href={href} style={{ display: 'block', textDecoration: 'none', background: '#F5F7FA', borderRadius: 10, padding: '28px 22px', borderTop: `3px solid ${G}`, transition: 'transform .15s ease, box-shadow .15s ease' }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 10px 24px rgba(11,31,58,.1)' }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}>
+              <div style={{ marginBottom: 16 }}>{icon}</div>
+              <h3 style={{ fontFamily: "'Montserrat',sans-serif", fontSize: '1.02rem', color: N, marginBottom: 10 }}>{titulo}</h3>
+              <p style={{ fontSize: '.9rem', color: '#4B5259', lineHeight: 1.6 }}>{desc}</p>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 16, padding: '9px 16px', background: G, color: 'white', fontWeight: 700, fontSize: '.82rem', borderRadius: 6, boxShadow: '0 3px 0 #007a54' }}>
+                Ver más →
+              </span>
+            </a>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 880px) { .servicios-grid { grid-template-columns: repeat(2,1fr) !important; } }
+        @media (max-width: 480px) { .servicios-grid { grid-template-columns: 1fr !important; } }
+      `}</style>
     </section>
   )
 }

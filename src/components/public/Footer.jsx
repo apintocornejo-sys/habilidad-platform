@@ -1,51 +1,43 @@
 import { Link } from 'react-router-dom'
 
+const N = '#0B1F3A'
+const G = '#00A676'
+
 const servicios = [
-  'Administración de condominio',
-  'Cobranza de gastos comunes',
-  'Mantención y obras',
-  'Gestión de contratos',
+  'Consultoría Estratégica',
+  'Seguridad y Riesgos',
+  'Desarrollo Organizacional',
+  'Seguimiento de Proyectos',
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-800 text-brand-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10">
-
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <span className="w-7 h-7 rounded bg-accent-600 flex items-center justify-center font-bold text-xs text-white">H</span>
-            <span className="font-semibold text-white tracking-tight">Habilidad Chile</span>
-          </div>
-          <p className="text-sm leading-relaxed text-brand-200 max-w-xs">
-            Consultora especializada en administración profesional de condominios en Chile.
-          </p>
+    <footer style={{ background: N, color: '#B9C3D1', padding: '40px 0', fontSize: '.85rem' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4 L34 32 H6 Z" fill="#FFFFFF"/>
+            <path d="M22 18 L30 32 H14 Z" fill="#00A676"/>
+          </svg>
+          <span style={{ color: 'white', fontWeight: 700 }}>Habilidad Consultores</span>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-400">Servicios</h3>
-          <ul className="flex flex-col gap-2">
-            {servicios.map((s) => (
-              <li key={s}><a href="/#servicios" className="text-sm text-brand-200 hover:text-white transition-colors">{s}</a></li>
-            ))}
-          </ul>
+        <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+          {servicios.map((s) => (
+            <a key={s} href="#servicios" style={{ color: '#B9C3D1', textDecoration: 'none' }}>{s}</a>
+          ))}
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-brand-400">Acceso</h3>
-          <ul className="flex flex-col gap-2">
-            <li><Link to="/login" className="text-sm text-brand-200 hover:text-white transition-colors">Iniciar sesión</Link></li>
-            <li><Link to="/admin" className="text-sm text-brand-200 hover:text-white transition-colors">Portal administración</Link></li>
-            <li><Link to="/cliente" className="text-sm text-brand-200 hover:text-white transition-colors">Portal condominios</Link></li>
-          </ul>
-          <a href="mailto:contacto@habilidad.cl" className="text-sm text-brand-200 hover:text-white transition-colors mt-2">contacto@habilidad.cl</a>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+          <Link to="/login" style={{ color: '#B9C3D1', textDecoration: 'none' }}>Ingresar</Link>
+          <a href="mailto:contacto@habilidad.cl" style={{ color: '#B9C3D1', textDecoration: 'none' }}>contacto@habilidad.cl</a>
         </div>
       </div>
 
-      <div className="border-t border-brand-600/40">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-brand-400">
-          <span>© {new Date().getFullYear()} Habilidad Chile SpA. Todos los derechos reservados.</span>
-          <span>Santiago, Chile</span>
+      <div style={{ borderTop: '1px solid rgba(255,255,255,.1)', marginTop: 24 }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: '16px 24px', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, fontSize: '.8rem', color: 'rgba(185,195,209,.6)' }}>
+          <span>© {new Date().getFullYear()} Habilidad Consultores — La Serena, Chile</span>
+          <span>contacto@habilidad.cl</span>
         </div>
       </div>
     </footer>
